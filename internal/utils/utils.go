@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"errors"
 	"log/slog"
 	"os"
 	"path/filepath"
@@ -36,7 +37,7 @@ func IsGitRepository() bool {
 func WriteFileIfNotExists(filename string, data []byte) error {
 	if FileExists(filename) {
 		slog.Info("file already exists, not overwriting", "filename", filename)
-		return nil
+		return errors.New("file already exists")
 	}
 	return os.WriteFile(filename, data, 0644)
 	

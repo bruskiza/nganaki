@@ -10,9 +10,7 @@ import (
 func NewRootCmd() (*cobra.Command, error) {
 	rootCmd := &cobra.Command{
 		Use:   "nganaki",
-		Short: "nganaki is a CLI tool",
-		Long: `nganaki is a CLI tool for managing your application.
-It provides various commands to interact with the system.`,
+		Short: "nganaki is a CLI tool that add .gitignore files for your projects",
 	}
 
 	rootCmd.AddCommand(listCmd)
