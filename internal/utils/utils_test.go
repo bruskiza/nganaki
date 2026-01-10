@@ -52,8 +52,8 @@ func TestWriteFileIfNotExists(t *testing.T) {
 
 	// Try writing the file again, it should not overwrite
 	err = WriteFileIfNotExists(testFile, []byte("New Data"))
-	if err != nil {
-		t.Fatalf("Failed to write file: %v", err)
+	if err == nil {
+		t.Fatalf("This should have errored.")
 	}
 
 	// Read the file and check its content
